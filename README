@@ -1,0 +1,57 @@
+                        PHP Tutor Scheduler
+
+INTRODUCTION
+
+This is a very basic scheduling system for an online tutoring website. It is
+designed to integrate with Groupworld (http://www.groupworld.net), both
+hosted and enterprise versions, but could easily be modified to support
+other online tutoring systems.
+
+INSTALLATION
+
+[1] Edit config.php and db.php to your requirements.
+[2] Create the database:
+
+mysql -u root < tutor_scheduler.sql
+mysql_setpermission -u root
+(add a user "groupworld" to database "tutor_scheduler" with extended user 
+privileges)
+
+[3] Create an admin user:
+mysql -u groupworld
+use tutor_scheduler
+insert into user values(null, 'admin', 'A', now(), 'admin@test.com', 'password', 'admin', 'user', '', '', '', '', '', '', 101);
+
+(replace 'password' with the admin password you want to use)
+
+[4] Log on as admin:
+
+https://yourserver.com/tutor_scheduler/
+
+USING THE SYSTEM
+
+[1] Create students and teachers in the admin control panel.
+[2] Create sessions for those users in the admin control panel.
+[3] Teacher and students log in at the appointed time and are directed
+to their Groupworld conference room.
+[4] After the session has ended, users are automatically logged off. The start
+time is determined by the time that both users have logged in, and the end
+time is the start time + the scheduled session length.
+[5] Users' login and logout times are stored in the session list.
+
+Admin users can log into any session.
+
+CUSTOMIZATION
+
+See http://www.groupworld.net/api.shtml
+
+API parameters can be added to room.php, just before the groupworld.htmlgen 
+call.
+
+By default each session is allocated its own Groupworld room, with its own
+storage space and whiteboard state. To make it so that the whiteboard is
+not persistent (i.e. that the contents are deleted when all users log off),
+just set the persistent_whiteboards Groupworld server option to false
+(/usr/local/groupworld/data/options in the enterprise license, or the
+"server configuration" page in the hosted control panel).
+

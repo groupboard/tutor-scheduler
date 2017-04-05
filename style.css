@@ -1,0 +1,31 @@
+table
+{
+    background:#ffffff none repeat scroll 0 0; 
+    border:1px solid #cccccc; 
+    border-collapse:collapse; 
+}
+
+table td,th 
+{
+    padding: 5px;
+    border-top:1px solid #CCCCCC;
+    border-right:1px solid #CCCCCC;
+}
+
+input, body, p, td, th, a.footer, ul, blockquote 
+{ 
+    font-size: 12pt;
+    font-family: "Arial", "Helvetica", sans-serif;
+}
+
+.error
+{
+    color: red;
+}
+
+a, a:visited, a:hover 
+{
+    text-decoration: none;
+    color: #4348ff;
+}
+
