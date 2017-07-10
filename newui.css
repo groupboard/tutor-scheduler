@@ -1,0 +1,135 @@
+.toolsmgn { margin-bottom: 10px;display:block }
+.math_icon { height: 40px; padding: 4px }
+.separator { height: 45px; vertical-align:top }
+.topbuts { pointer-events:all; height: 38px; padding: 0px; margin: 0px; border-bottom: 1px solid #DCDCDC; background: #ECECEC; position:relative; top: -38px; left: -5px; padding-left: 10px; white-space:nowrap; width: 110%}
+#toplogo { height: 38px; position: relative; top: -7px; left: 10px }
+.iosbut, .iosbut>a, .iosbut>a>i { color: rgb(21, 125, 251); text-decoration:none; font-size: 21px }
+.iosbut>a>i { padding-right: 10px; font-size: 30px; }
+.iosbutbar { z-index: 20; padding: 8px; background-color: rgba(248,248,248,0.5) }
+@media (min-device-width:320px)  and (max-device-width:700px)
+{
+    .iosbutbar { top: 65px !important }
+}
+@media (min-device-width:701px)  and (max-device-width:768px)
+{
+    .iosbutbar { top: 20px !important }
+}
+.actionsheet_button {     
+    border-radius: 3px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.07);
+    width: 250px;
+    border-width: 1px;
+    border-style: solid;
+    background-color: #f5f5f5;
+    border-color: rgba(0,0,0,.12);
+    color: #606060;
+    font-size: 14px;
+    font-family: 'Helvetica Neue','Segoe UI',Helvetica,Verdana,sans-serif;
+    padding: 5px;
+    margin: 4px;
+}
+.popover { max-width:450px; pointer-events:all }
+input[type=range]{display:inline;}
+.bottom { bottom: 10px;}
+.abs { position: absolute;}
+html, body { overflow:hidden; }
+.top { top: 10px; }
+.chatpopover { max-width:500px }
+@media only screen and (max-width : 480px) {
+    .chatpopover { max-width: 400px; }
+}
+.right { right: 10px; }
+.controls { height: 50px;position:absolute;bottom:92px;pointer-events:none }
+#zoomcontrols { position:absolute;bottom:100px;z-index:10;width:30px;pointer-events:all}
+#pan { position:relative; right: 10px }
+.left { left: 7px }
+.colhoriz { left: 60px; }
+.slider { width:80px !important; cursor:pointer;vertical-align:middle}
+.mag_glass { font-size:18px !important;background-color: rgba(255,255,255,0.8);padding:4px;border-radius:3px;margin-left:-2px;margin-bottom:2px}
+.zoomslider 
+{ 
+    height:100px;
+    width:50px !important;
+    margin-left: -15px;
+    -webkit-appearance: slider-vertical;
+    cursor:pointer;
+    margin-right:0;
+    writing-mode: bt-lr;
+}
+.indicator { height:30px;font-size:10px;display:inline-flex;pointer-events:all}
+.icon
+{
+    pointer-events:all;
+    width: 40px;
+    height: 40px;
+    cursor:pointer;
+}
+.fa { font-size: 30px; cursor:pointer; color:black}
+.fa-small { font-size: 20px; cursor:pointer; color:black}
+.autocursor { cursor:auto }
+.grey { color: #000000; } 
+
+.unreadbadge
+{
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    font-size: 22px;
+    color: red;
+    opacity: 0.7;
+    pointer-events:none;
+}
+.badgetext
+{
+    position: absolute;
+    right: 23px;
+    bottom: 22px;
+    font-size: 15px;
+    font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing: auto;
+    color: white;
+    pointer-events:none;
+}
+.badgetext_double_digit
+{
+    right: 21px;
+}
+.drawopts
+{
+    margin-left:5px;
+    margin-right:5px;
+    vertical-align: text-bottom;
+}
+.smallicon
+{
+    margin-right: 2px; 
+    margin-left: 2px; 
+    width: 30px;
+    height: 30px;
+    vertical-align:top;
+    margin-top:4px;
+    color: black;
+}
+.box
+{
+    padding: 6px;
+    border-radius: 4px;
+    box-shadow: 0 0 0 1px #bbb,0 1px 1px #aaa;
+    background-color: rgba(225,225,225,0.8);
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+}
+.bluebox { background-color: rgba(127,195,254,0.8); }
+.blueborder { border: 2px solid rgba(127,195,254,0.8); }
+.imgbox { padding: 4px }
+.imgbottom { vertical-align: bottom }
+
+.fa-topbaricon { min-width: 25px; margin: 2px; padding: 2px; }
+.fa-topbaricon:hover { background: #dddddd; }
+.fa-iconlist { min-width: 25px; margin: 2px; padding: 2px }
+.fa-iconlist:hover { background: #dddddd; }
+.smallicon:hover { background: #dddddd; }
+.fa-selected { outline: #0000ff solid thin ; }
+#zoom_text { display:none; color:red;position:absolute;right:0px;bottom:80px;z-index:10 }
