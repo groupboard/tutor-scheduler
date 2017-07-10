@@ -21,10 +21,10 @@ $user_type = $_SESSION['user_type'];
 <head>
 <meta id="vp" name="viewport" content="width=device-width, initial-scale=1">
 <title>Groupworld HTML5 Conference Room</title>
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"><link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> <script type="text/javascript"> window.jQuery || document.write('<script src="<?php print $groupworld_js; ?>/jquery.min.js"><\/script>'); </script> <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script><link rel="stylesheet" type="text/css" href="//www.groupboard.com/newui.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"><link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> <script type="text/javascript"> window.jQuery || document.write('<script src="<?php print $groupworld_js; ?>/jquery.min.js"><\/script>'); </script> <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script><link rel="stylesheet" type="text/css" href="newui.css">
 
 <link rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/bkpfcahabbgcjikdomdcamdlcipolkcf">
-<link rel="stylesheet" href="//www.groupworld.net/style.css" type="text/css">
+<link rel="stylesheet" href="style.css" type="text/css">
 <link rel="stylesheet" type="text/css" href="<?php print $groupworld_js; ?>/dialog.css">
 
 <?php print'<script type="text/javascript" src="'.$groupworld_js.'/aes-enc.min.js"></script>
@@ -142,6 +142,16 @@ onLoad="REDIPS.dialog.init(); start();">
 // Generate the actual Groupworld object. Parameters: width and height of
 // object
 new_whiteboard.newui = true;
+// Add any API parameters here (http://www.groupworld.net/api.shtml)
+
+new_whiteboard.newui = true;
+new_whiteboard.options['default_size'] = 3;
+new_whiteboard.options['show_share_video'] = 'true';
+new_videostrip.options['show_auto_record'] = 'false';
+new_videostrip.options['use_webrtc'] = 'true';
+new_whiteboard.options['multi_user_pan'] = 'false';
+new_conference.options['use_instance_recording_dir'] = 'true';
+new_conference.options['use_scrollbars'] = 'false';
 groupworld.htmlgen('100%','100%');
 </script>
 </body>
