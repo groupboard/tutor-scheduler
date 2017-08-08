@@ -66,7 +66,7 @@ if ($result && mysqli_num_rows($result))
                 if ($actual_start_time == '' && $student_login_time != '')
                 {
                     // mark session as actually started
-                    $query = "update session set actual_login_time=NOW() where session_id=$session_id";
+                    $query = "update session set actual_start_time=NOW() where session_id=$session_id";
                     $result = mysqli_query($mysql_link, $query) or die(mysqli_error($mysql_link));
                 }
             }
