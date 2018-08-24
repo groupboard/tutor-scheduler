@@ -2,10 +2,14 @@
 
 INTRODUCTION
 
-This is a very basic scheduling system for an online tutoring website. It is
-designed to integrate with Groupworld (http://www.groupworld.net), both
-hosted and enterprise versions, but could easily be modified to support
-other online tutoring systems.
+This is a very basic scheduling system for an online tutoring website. It is designed to integrate with Groupworld (https://www.groupworld.net), both hosted and enterprise versions, but could easily be modified to support other online tutoring systems.
+
+FEATURES
+
+- Admin control panel for creating users and sessions.
+- Automatically tracks login and logout times for users.
+- Ability to set start/end time for session, which is enforced.
+- Reminders automatically emailed to users 1 day and 1 hour before session.
 
 INSTALLATION
 
@@ -22,9 +26,13 @@ mysql -u groupworld
 use tutor_scheduler
 insert into user values(null, 'admin', 'A', now(), 'admin@test.com', 'password', 'admin', 'user', '', '', '', '', '', '', 101);
 
-(replace 'password' with the admin password you want to use)
+(replace 'admin@test.com' and 'password' with the admin username and password you want to use)
 
-[4] Log on as admin:
+[4] To automatically send out reminders, add a line like this to crontab (use the correct path to the send_reminders.php script):
+
+0,5,10,15,20,25,30,35,40,45,50,55  *  * * * nice -19 php /home/tutor_scheduler/admin/send_reminders.php
+
+[5] Log on as admin:
 
 https://yourserver.com/tutor_scheduler/
 
