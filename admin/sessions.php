@@ -44,6 +44,8 @@ if ($action == 'new')
                 $student_logout_time = $row['student_logout_time'];
                 $teacher_login_time = $row['teacher_login_time'];
                 $teacher_logout_time = $row['teacher_logout_time'];
+                $reminder1_sent = $row['reminder1_sent'];
+                $reminder2_sent = $row['reminder2_sent'];
             }
         }
         else
@@ -68,6 +70,8 @@ if ($action == 'new')
     print "<tr><td>Student logout time ($tz):</td><td>$student_logout_time</td></tr>";
     print "<tr><td>Teacher login time ($tz):</td><td>$teacher_login_time</td></tr>";
     print "<tr><td>Teacher logout time ($tz):</td><td>$teacher_logout_time</td></tr>";
+    print "<tr><td>Reminder 1 sent?:</td><td>$reminder1_sent</td></tr>";
+    print "<tr><td>Reminder 2 sent?:</td><td>$reminder2_sent</td></tr>";
     print "</table><br><input type=submit value=Submit></form>";
 }
 else if ($action == 'add')
@@ -148,7 +152,7 @@ else if ($action == 'del')
 else
 {
     print "<table><tr>";
-    print "<th>Sessionid</th><th>Title</th><th>Start time ($tz)</th><th>Session length (mins)</th><th>Actual start time ($tz)</th><th>Teacher</th><th>Student</th><th>Teacher login time ($tz)</th><th>Teacher logout time ($tz)</th><th>Student login time ($tz)</th><th>Student logout time ($tz)</th><th>DELETE</th><th>EDIT</th></tr>";
+    print "<th>Sessionid</th><th>Title</th><th>Start time ($tz)</th><th>Session length (mins)</th><th>Actual start time ($tz)</th><th>Teacher</th><th>Student</th><th>Teacher login time ($tz)</th><th>Teacher logout time ($tz)</th><th>Student login time ($tz)</th><th>Student logout time ($tz)</th><th>Reminder1 sent?</th><th>Reminder2 sent?</th><th>DELETE</th><th>EDIT</th></tr>";
     print "</tr>";
     $query = "select * from session";
     $result = mysqli_query($mysql_link, $query);
@@ -167,6 +171,8 @@ else
             $student_logout_time = $row['student_logout_time'];
             $teacher_login_time = $row['teacher_login_time'];
             $teacher_logout_time = $row['teacher_logout_time'];
+            $reminder1_sent = $row['reminder1_sent'];
+            $reminder2_sent = $row['reminder2_sent'];
 
             if (preg_match('/^\d+$/',$student))
             {
@@ -194,7 +200,7 @@ else
             }
 
 
-            print "<tr><td>$session_id</td><td>$title</td><td>$start_time</td><td>$length_minutes</td><td>$actual_start_time</td><td>$teacher_name</td><td>$student_name</td><td>$teacher_login_time</td><td>$teacher_logout_time</td><td>$student_login_time</td><td>$student_logout_time</td><td><a href=\"?action=del&session_id=$session_id\">Delete Session</a></td><td><a href=\"?action=new&session_id=$session_id\">Edit Session</a></td></tr>";
+            print "<tr><td>$session_id</td><td>$title</td><td>$start_time</td><td>$length_minutes</td><td>$actual_start_time</td><td>$teacher_name</td><td>$student_name</td><td>$teacher_login_time</td><td>$teacher_logout_time</td><td>$student_login_time</td><td>$student_logout_time</td><td>$reminder1_sent</td><td>$reminder2_sent</td><td><a href=\"?action=del&session_id=$session_id\">Delete Session</a></td><td><a href=\"?action=new&session_id=$session_id\">Edit Session</a></td></tr>";
         }
     }
     print "</table>";
