@@ -46,7 +46,9 @@ create table session
     student_logout_time datetime,
     teacher_login_time datetime,
     teacher_logout_time datetime,
-    actual_start_time datetime
+    actual_start_time datetime,
+    reminder1_sent char(1) default 'n',
+    reminder2_sent char(1) default 'n'
 );
 
 
