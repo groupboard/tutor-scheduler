@@ -81,6 +81,13 @@ function start()
     var username = '<?php print $username; ?>';
     var password = '';
 
+    // The following lines change the default websocket port from 9175 to
+    // 80 or 443. In order to use port 80 or 443 you must have configured you
+    // webserver to proxy the websocket connection if using the self-hosted
+    // enterprise version. See the "USING PORT 80/443" section of the 
+    // Groupworld HTML5 client README file. Just comment out these lines if 
+    // you have not set that up.
+
     if (window.location.protocol == 'https:')
     {
         groupworld.tunnel_port = 443;
@@ -92,7 +99,7 @@ function start()
 
     // The GroupWorld server to connect to. You can optionally specify the
     // port number and installation id (using the format "server:port:install_id").
-    var base = '<?php print $groupworld_server; ?>:'+groupworld.tunnel_port+':<?php print $groupworld_id; ?>';
+    var base = '<?php print $groupworld_server; ?>:'+groupworld.tunnel_port+'<?php if ($groupworld_id != "") print ":$groupworld_id"; ?>';
 
     // The object to load and instance name. To create a different "session",
     // just copy the html page and change the instance name.
