@@ -167,7 +167,7 @@ function show_login($msg)
     print "</table>";
     print "<p><input type=submit value=\"Login\"></p></form>";
 }
-</script>
+?>
 </center>
 <?php
 if ($_SESSION['username'] != "")
