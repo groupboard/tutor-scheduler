@@ -1,6 +1,6 @@
 <?php
-$tz = "PST/PDT";     # timezone (for display purposes)
-$time_diff = -3;     # difference between server timezone and display timezone
+$tz = "EST/EDT";     # timezone (for display purposes)
+$time_diff = 0;      # difference between server timezone and display timezone
                      # (-3 will convert server EDT to display PDT)
 $date_format = "%m/%d/%y %l:%i%p"; # see mysql DATE_FORMAT
 $db = "tutor_scheduler";
