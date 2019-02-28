@@ -22,6 +22,14 @@ if ($_SESSION['username'] == '' || $_SESSION['user_type'] != 'A')
 $action = $_REQUEST['action'];
 if ($action == 'new')
 {
+    $query = "select current_timestamp";
+    $result = mysqli_query($mysql_link, $query);
+    if ($result && mysqli_num_rows($result))
+    {
+        $row = mysqli_fetch_row($result);
+        $current_timestamp = $row[0];
+    }
+
     $session_id = $_REQUEST['session_id'];
     if ($session_id != '')
     {
@@ -53,6 +61,7 @@ if ($action == 'new')
             die("error getting session details for session $session_id");
         }
     }
+    print "<p>Current time: $current_timestamp (if this looks wrong, you should change \$time_diff in db.php)</p>";
     print "<form><table>";
     print "<input type=hidden name=action value=add><br>";
     print "<input type=hidden name=session_id value=\"$session_id\"><br>";
