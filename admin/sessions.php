@@ -99,7 +99,7 @@ else if ($action == 'add')
     }
     if ($session_id == '')
     {
-        $query = sprintf("insert into session values(null, '%s', '%s', %d, $teacher, $student, null, null, null, null, null, 'n, 'n')",
+        $query = sprintf("insert into session values(null, '%s', '%s', %d, $teacher, $student, null, null, null, null, null, 'n', 'n')",
             mysqli_real_escape_string($mysql_link, $title),
             mysqli_real_escape_string($mysql_link, $start_time),
             mysqli_real_escape_string($mysql_link, $length_minutes)
