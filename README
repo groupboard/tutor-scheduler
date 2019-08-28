@@ -7,8 +7,12 @@ This is a very basic scheduling system for an online tutoring website. It is des
 FEATURES
 
 - Admin control panel for creating users and sessions.
-- Automatically tracks login and logout times for users.
-- Ability to set start/end time for session, which is enforced.
+- Automatically tracks login and logout times for users in the session.
+- Ability to set start time and length for session, which is enforced.
+- Users can log in 5 minutes before session (this can be configured).
+- When users log in they can see their scheduled sessions for the next 24
+  hours and prior 2 hours. Users can log into sessions starting within the 
+  next 5 minutes, or sessions that have already started.
 - Reminders automatically emailed to users 1 day and 1 hour before session.
 
 INSTALLATION
